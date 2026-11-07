@@ -1,0 +1,13 @@
+[
+  { "nome": "dois pontos", "justificativa": "Menor entrada válida.", "pontos": [[0, 0], [3, 4]], "esperado": { "distancia": 5, "pares": [[0, 1]] } },
+  { "nome": "pontos duplicados", "justificativa": "Estações na mesma posição: distância 0 e faixa vazia.", "pontos": [[1, 1], [5, 5], [1, 1]], "esperado": { "distancia": 0, "pares": [[0, 2]] } },
+  { "nome": "todos com o mesmo x", "justificativa": "A divisão por x não separa os pontos geometricamente; todos ficam sobre a linha.", "pontos": [[2, 0], [2, 10], [2, 3], [2, 5]], "esperado": { "distancia": 2, "pares": [[2, 3]] } },
+  { "nome": "todos com o mesmo y", "justificativa": "Pontos colineares na horizontal: a ordenação por y fica toda empatada.", "pontos": [[0, 7], [9, 7], [4, 7], [6, 7]], "esperado": { "distancia": 2, "pares": [[2, 3]] } },
+  { "nome": "par cruza a linha divisória", "justificativa": "Só a verificação da faixa encontra o par, um em cada lado.", "pontos": [[0, 0], [0, 100], [9.5, 50], [10.5, 50], [20, 0], [20, 100]], "esperado": { "distancia": 1, "pares": [[2, 3]] } },
+  { "nome": "empate em quadrado", "justificativa": "Quatro pares com a mesma distância mínima; qualquer um deles é aceito.", "pontos": [[0, 0], [0, 1], [1, 0], [1, 1]], "esperado": { "distancia": 1, "pares": [[0, 1], [0, 2], [1, 3], [2, 3]] } },
+  { "nome": "coordenadas negativas", "justificativa": "Garante que a ordenação é numérica e a diferença de coordenadas funciona com sinal.", "pontos": [[-5, -5], [-1, -2], [3, 3], [-1, -1]], "esperado": { "distancia": 1, "pares": [[1, 3]] } },
+  { "nome": "coordenadas decimais", "justificativa": "A entrada não se limita a inteiros.", "pontos": [[0.5, 0.5], [0.5, 0.75], [10, 10]], "esperado": { "distancia": 0.25, "pares": [[0, 1]] } },
+  { "nome": "grade 3x3", "justificativa": "Empates em x e y, com muitos pontos a distância δ, testando a faixa no pior arranjo.", "pontos": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]], "esperado": { "distancia": 1 } },
+  { "nome": "grade 6x6", "justificativa": "Com mais de 16 pontos, passa pela recursão e não só pelo caso base da força bruta.", "pontos": [[0, 0], [0, 2], [0, 4], [0, 6], [0, 8], [0, 10], [2, 0], [2, 2], [2, 4], [2, 6], [2, 8], [2, 10], [4, 0], [4, 2], [4, 4], [4, 6], [4, 8], [4, 10], [6, 0], [6, 2], [6, 4], [6, 6], [6, 8], [6, 10], [8, 0], [8, 2], [8, 4], [8, 6], [8, 8], [8, 10], [10, 0], [10, 2], [10, 4], [10, 6], [10, 8], [10, 10]], "esperado": { "distancia": 2 } },
+  { "nome": "apenas um ponto", "justificativa": "Não existe par: o programa deve falhar com mensagem clara, sem resposta inventada.", "pontos": [[1, 2]], "esperado": { "erro": true } }
+]

@@ -1,0 +1,17 @@
+[
+  { "nome": "somente negativos", "justificativa": "Caso de borda exigido. A resposta é o maior valor isolado, nunca um intervalo vazio de soma 0.", "valores": [-8, -3, -6, -2, -5], "esperado": { "soma": -2, "inicio": 3, "fim": 3 } },
+  { "nome": "tamanho 1 positivo", "justificativa": "Caso de borda exigido. Testa o caso base da recursão.", "valores": [7], "esperado": { "soma": 7, "inicio": 0, "fim": 0 } },
+  { "nome": "tamanho 1 negativo", "justificativa": "Caso de borda exigido, somado à situação de só haver negativos.", "valores": [-4], "esperado": { "soma": -4, "inicio": 0, "fim": 0 } },
+  { "nome": "tamanho 1 zero", "justificativa": "Caso de borda exigido, com soma nula.", "valores": [0], "esperado": { "soma": 0, "inicio": 0, "fim": 0 } },
+  { "nome": "tamanho 2", "justificativa": "Menor vetor que passa por uma divisão.", "valores": [-1, 5], "esperado": { "soma": 5, "inicio": 1, "fim": 1 } },
+  { "nome": "empate entre intervalos separados", "justificativa": "Empate exigido. Dois intervalos disjuntos com soma 3; vale o de menor início.", "valores": [3, -5, 3], "esperado": { "soma": 3, "inicio": 0, "fim": 0 } },
+  { "nome": "empate entre negativos", "justificativa": "Empate exigido, com todos os valores negativos.", "valores": [-2, -1, -1], "esperado": { "soma": -1, "inicio": 1, "fim": 1 } },
+  { "nome": "empate com prefixo de soma zero", "justificativa": "Empate exigido. [0,2] e [2,2] somam 2; vale o de menor início. Pega recomeço indevido com soma parcial zero.", "valores": [1, -1, 2], "esperado": { "soma": 2, "inicio": 0, "fim": 2 } },
+  { "nome": "empate com sufixo de soma zero", "justificativa": "Empate exigido. [0,0] e [0,2] somam 2; vale o de menor fim.", "valores": [2, -1, 1], "esperado": { "soma": 2, "inicio": 0, "fim": 0 } },
+  { "nome": "todos zeros", "justificativa": "Empate extremo: todos os intervalos somam 0.", "valores": [0, 0, 0], "esperado": { "soma": 0, "inicio": 0, "fim": 0 } },
+  { "nome": "todos positivos", "justificativa": "A resposta é o vetor inteiro.", "valores": [1, 2, 3, 4], "esperado": { "soma": 10, "inicio": 0, "fim": 3 } },
+  { "nome": "resposta cruza o meio", "justificativa": "Exercita a etapa de combinação.", "valores": [-2, 1, -3, 4, -1, 2, 1, -5, 4], "esperado": { "soma": 6, "inicio": 3, "fim": 6 } },
+  { "nome": "resposta na metade esquerda", "justificativa": "A combinação não pode superar o resultado da chamada recursiva esquerda.", "valores": [5, 4, -20, 1, 1, 1], "esperado": { "soma": 9, "inicio": 0, "fim": 1 } },
+  { "nome": "resposta na metade direita", "justificativa": "A combinação não pode superar o resultado da chamada recursiva direita.", "valores": [-1, -1, -20, 5, 4, 1], "esperado": { "soma": 10, "inicio": 3, "fim": 5 } },
+  { "nome": "soma acima de 32 bits", "justificativa": "A soma ultrapassa 2^31, o que revelaria operações bit a bit ou inteiros de 32 bits nas somas.", "valores": [1000000000, 1000000000, -1, 1000000000], "esperado": { "soma": 2999999999, "inicio": 0, "fim": 3 } }
+]
