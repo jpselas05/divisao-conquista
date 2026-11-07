@@ -1,0 +1,8 @@
+{
+  "cpu": "13th Gen Intel(R) Core(TM) i5-1335U",
+  "nucleos_logicos": 12,
+  "memoria_gb": 8,
+  "sistema": "win32 10.0.26300",
+  "node": "v24.14.1",
+  "v8": "13.6.233.17-node.44"
+}
