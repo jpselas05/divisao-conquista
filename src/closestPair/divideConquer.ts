@@ -2,7 +2,7 @@ import { assertHasPair, toResult } from './types.ts';
 import type { ClosestPairResult, Point } from './types.ts';
 
 /** Tamanho a partir do qual a recursão passa para a força bruta. Ver results/limiar.csv. */
-export const DEFAULT_THRESHOLD = 16;
+export const DEFAULT_THRESHOLD = 32;
 
 /** Quantos vizinhos seguintes, em ordem de y, cada ponto da faixa compara. */
 const MAX_STRIP_NEIGHBORS = 7;

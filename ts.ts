@@ -92,7 +92,7 @@ for (let seed = 1; seed <= 3000; seed++) {
 }
 
 // Empates de par são válidos, então só a distância precisa coincidir.
-const thresholds = [2, 3, 8, 16, 64];
+const thresholds = [2, 3, 8, 16, 32, 64];
 for (let seed = 1; seed <= 3000; seed++) {
   const random = createRandom(seed);
   const n = 2 + Math.floor(random() * 300);
