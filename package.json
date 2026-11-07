@@ -1,0 +1,20 @@
+{
+  "name": "divisao-e-conquista",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node ts.ts",
+    "typecheck": "tsc",
+    "bench": "node --expose-gc src/benchmark/run.ts",
+    "bench:limiar": "node --expose-gc src/benchmark/threshold.ts",
+    "bench:cruzamento": "node --expose-gc src/benchmark/crossover.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
