@@ -57,6 +57,7 @@ O script `ts.ts` passa os casos de `tests/` pelos programas reais e compara a t�
 npm run bench             # results/medicoes.csv e results/maquina.json
 npm run bench:limiar      # results/limiar.csv
 npm run bench:cruzamento  # results/cruzamento.csv
+npm run bench:ordenacao  # results/ordenacao.csv
 npm run bench:resumo      # results/resumo.csv
 ```
 
@@ -64,3 +65,15 @@ Cada tamanho tem 20 execuções, com entradas de semente fixa. O código é aque
 
 A coleta de lixo não é forçada entre as medições: chamar `gc()` antes de cada uma criava dois patamares de tempo, de cerca de 5 ms e 11 ms, numa chamada que leva cerca de 4 ms sem isso. O custo normal de memória faz parte do tempo medido.
 
+
+## Relatório
+
+O PDF fica em `relatorio/relatorio.pdf`. Para gerá-lo de novo a partir de `results/`:
+
+```bash
+python -m venv relatorio/.venv
+relatorio/.venv/Scripts/python -m pip install -r relatorio/requirements.txt
+relatorio/.venv/Scripts/python relatorio/gerar.py
+```
+
+Os nomes da dupla e o link do repositório ficam no início de `relatorio/secoes.py`.

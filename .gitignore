@@ -1,1 +1,3 @@
 node_modules/
+relatorio/.venv/
+__pycache__/
