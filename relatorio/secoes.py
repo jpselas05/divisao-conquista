@@ -1,8 +1,8 @@
 """Texto do relatório. Números de medição vêm sempre de Dados, nunca digitados à mão."""
 from dados import TAMANHOS
 
-NOMES = "[Nome 1] e [Nome 2]"
-REPOSITORIO = "[link do repositório]"
+NOMES = "João Pedro Sales Melo | 2510426 e Igor Roberto Freitas Barbosa | 2510420"
+REPOSITORIO = "https://github.com/jpselas05/divisao-conquista"
 
 
 def br(valor, casas=2):
