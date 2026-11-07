@@ -9,7 +9,6 @@ import { maxSubarrayDivideConquer } from '../src/maxSubarray/divideConquer.ts';
 import { maxSubarrayDivideConquerLinear } from '../src/maxSubarray/divideConquerLinear.ts';
 import { maxSubarrayKadane } from '../src/maxSubarray/kadane.ts';
 
-/** Bateria do trabalho: casos em tests/ pelos programas reais, depois força bruta x técnica. */
 const root = join(import.meta.dirname, '..');
 const EPSILON = 1e-9;
 let passed = 0;
@@ -78,7 +77,6 @@ for (const item of loadCases<PairCase>('casos-etapa2.json')) {
 
 const cliChecks = passed + failures.length;
 
-// Valores em faixa pequena forçam empates; as quatro versões devem dar o mesmo intervalo.
 const subarrayAlgorithms = [maxSubarrayDivideConquer, maxSubarrayDivideConquerLinear, maxSubarrayKadane];
 for (let seed = 1; seed <= 3000; seed++) {
   const random = createRandom(seed);
@@ -91,7 +89,6 @@ for (let seed = 1; seed <= 3000; seed++) {
   }
 }
 
-// Empates de par são válidos, então só a distância precisa coincidir.
 const thresholds = [2, 3, 8, 16, 32, 64];
 for (let seed = 1; seed <= 3000; seed++) {
   const random = createRandom(seed);

@@ -1,7 +1,6 @@
 import { assertNotEmpty } from './types.ts';
 import type { SubarrayResult } from './types.ts';
 
-/** Testa todos os intervalos, reaproveitando a soma parcial. Tempo: O(n²). */
 export function maxSubarrayBrute(values: readonly number[]): SubarrayResult {
   assertNotEmpty(values);
   let bestSum = -Infinity;

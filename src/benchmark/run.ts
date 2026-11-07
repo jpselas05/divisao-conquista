@@ -3,7 +3,6 @@ import { createRandom } from './generators.ts';
 import { keepSink, timeOnce, warmUp, writeCsv, writeMachineInfo } from './measure.ts';
 import { SUITES } from './suites.ts';
 
-/** Inclui os tamanhos sugeridos no enunciado e vai além para evidenciar o crescimento. */
 const SIZES = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600];
 const RUNS = 20;
 const WARM_UP_SIZE = 1000;
@@ -18,7 +17,6 @@ for (const suite of SUITES) {
 
   for (const n of SIZES) {
     for (let run = 1; run <= RUNS; run++) {
-      // Por execução, todos os algoritmos recebem a mesma entrada.
       const calls = suite.prepare(n, createRandom(n * 1000 + run));
       for (const name of suite.algorithms) {
         rows.push([suite.stage, name, n, run, timeOnce(calls[name]).toFixed(6)]);

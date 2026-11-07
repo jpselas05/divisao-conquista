@@ -1,7 +1,6 @@
 import { assertNotEmpty, isBetter } from './types.ts';
 import type { SubarrayResult } from './types.ts';
 
-/** Resumo de um trecho: com ele, combinar duas metades custa O(1). */
 interface Segment {
   total: number;
   prefixSum: number;
@@ -51,7 +50,6 @@ function solve(values: readonly number[], lo: number, hi: number): Segment {
   return merge(solve(values, lo, mid), solve(values, mid + 1, hi));
 }
 
-/** Divisão e conquista com combinação O(1): T(n) = 2T(n/2) + O(1) = O(n). */
 export function maxSubarrayDivideConquerLinear(values: readonly number[]): SubarrayResult {
   assertNotEmpty(values);
   return solve(values, 0, values.length - 1).best;

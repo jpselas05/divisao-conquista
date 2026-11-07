@@ -1,7 +1,6 @@
 import { assertHasPair, toResult } from './types.ts';
 import type { ClosestPairResult, Point } from './types.ts';
 
-/** Compara todos os pares. Tempo: O(n²). */
 export function closestPairBrute(points: readonly Point[]): ClosestPairResult {
   assertHasPair(points);
   let best = Infinity;

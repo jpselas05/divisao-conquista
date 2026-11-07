@@ -1,14 +1,12 @@
 import { assertNotEmpty, isBetter } from './types.ts';
 import type { SubarrayResult } from './types.ts';
 
-/** Melhor intervalo que contém mid e mid + 1. Tempo: O(n) no tamanho do trecho. */
 function maxCrossing(values: readonly number[], lo: number, mid: number, hi: number): SubarrayResult {
   let leftBest = -Infinity;
   let start = mid;
   let sum = 0;
   for (let i = mid; i >= lo; i--) {
     sum += values[i];
-    // >= prefere o início mais à esquerda em caso de empate.
     if (sum >= leftBest) {
       leftBest = sum;
       start = i;
@@ -20,7 +18,6 @@ function maxCrossing(values: readonly number[], lo: number, mid: number, hi: num
   sum = 0;
   for (let j = mid + 1; j <= hi; j++) {
     sum += values[j];
-    // > prefere o fim mais à esquerda em caso de empate.
     if (sum > rightBest) {
       rightBest = sum;
       end = j;
@@ -41,7 +38,6 @@ function solve(values: readonly number[], lo: number, hi: number): SubarrayResul
   return isBetter(crossing, best) ? crossing : best;
 }
 
-/** T(n) = 2T(n/2) + O(n) = O(n log n). */
 export function maxSubarrayDivideConquer(values: readonly number[]): SubarrayResult {
   assertNotEmpty(values);
   return solve(values, 0, values.length - 1);

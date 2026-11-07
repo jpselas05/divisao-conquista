@@ -1,4 +1,3 @@
-/** Intervalo contínuo [start, end], com índices inclusivos, e a soma dos seus valores. */
 export interface SubarrayResult {
   sum: number;
   start: number;
@@ -7,10 +6,6 @@ export interface SubarrayResult {
 
 export type MaxSubarrayAlgorithm = (values: readonly number[]) => SubarrayResult;
 
-/**
- * Critério de desempate usado por todas as versões: maior soma, depois menor
- * início, depois menor fim. Assim, os algoritmos devolvem sempre o mesmo intervalo.
- */
 export function isBetter(a: SubarrayResult, b: SubarrayResult): boolean {
   if (a.sum !== b.sum) return a.sum > b.sum;
   if (a.start !== b.start) return a.start < b.start;

@@ -7,7 +7,6 @@ import { maxSubarrayKadane } from '../maxSubarray/kadane.ts';
 import { randomIntegers, randomPoints } from './generators.ts';
 import type { Random } from './generators.ts';
 
-/** Prepara uma entrada de tamanho n e devolve a chamada a medir para cada algoritmo. */
 export interface Suite {
   stage: string;
   algorithms: string[];

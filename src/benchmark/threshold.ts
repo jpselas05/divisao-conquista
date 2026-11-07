@@ -4,7 +4,6 @@ import { createRandom, randomPoints } from './generators.ts';
 import { keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
 import { PLANE_SIZE } from './suites.ts';
 
-/** Mede a divisão e conquista da Etapa 2 com vários limiares de corte da recursão. */
 const THRESHOLDS = [2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 256];
 const SIZES = [6400, 25600];
 const RUNS = 20;
@@ -20,7 +19,6 @@ for (const n of SIZES) {
 
   for (let run = 1; run <= RUNS; run++) {
     const points = randomPoints(n, PLANE_SIZE, createRandom(n * 7000 + run));
-    // Alterna a ordem dos limiares para o tempo não depender da posição na fila.
     const order = run % 2 === 0 ? THRESHOLDS : [...THRESHOLDS].reverse();
     for (const threshold of order) {
       const time = timeOnce(() => closestPairDivideConquer(points, threshold).distance);

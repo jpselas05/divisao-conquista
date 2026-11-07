@@ -1,10 +1,8 @@
 import { assertHasPair, toResult } from './types.ts';
 import type { ClosestPairResult, Point } from './types.ts';
 
-/** Tamanho a partir do qual a recursão passa para a força bruta. Ver results/limiar.csv. */
 export const DEFAULT_THRESHOLD = 32;
 
-/** Quantos vizinhos seguintes, em ordem de y, cada ponto da faixa compara. */
 const MAX_STRIP_NEIGHBORS = 7;
 
 interface PairCandidate {
@@ -13,7 +11,6 @@ interface PairCandidate {
   b: number;
 }
 
-/** T(n) = 2T(n/2) + O(n) = O(n log n), além da ordenação inicial O(n log n). */
 export function closestPairDivideConquer(
   points: readonly Point[],
   threshold: number = DEFAULT_THRESHOLD,
@@ -47,7 +44,6 @@ export function closestPairDivideConquer(
     return best;
   }
 
-  /** Separa byY entre os lados em O(n), preservando a ordem por y. */
   function splitByY(byY: Int32Array, lo: number, mid: number): [Int32Array, Int32Array] {
     for (let i = lo; i < lo + byY.length; i++) isLeft[byX[i]] = i < mid ? 1 : 0;
     const left = new Int32Array(mid - lo);
@@ -61,7 +57,6 @@ export function closestPairDivideConquer(
     return [left, right];
   }
 
-  /** Procura pares que cruzam a linha x = lineX e sejam melhores que best. */
   function searchStrip(byY: Int32Array, lineX: number, best: PairCandidate): PairCandidate {
     let size = 0;
     for (let i = 0; i < byY.length; i++) {

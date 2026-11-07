@@ -4,7 +4,6 @@ import { createRandom, randomPoints } from './generators.ts';
 import { keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
 import { PLANE_SIZE } from './suites.ts';
 
-/** Mede quanto do tempo da divisão e conquista da Etapa 2 vai para as duas ordenações iniciais. */
 const SIZES = [1600, 6400, 25600];
 const RUNS = 20;
 const RESULTS_DIR = join(import.meta.dirname, '..', '..', 'results');

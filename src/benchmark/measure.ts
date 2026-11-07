@@ -2,21 +2,17 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { cpus, platform, release, totalmem } from 'node:os';
 import { dirname } from 'node:path';
 
-/** Acumula os resultados para o JIT não eliminar as chamadas medidas. */
 let sink = 0;
 
-/** Tempo, em milissegundos, de uma chamada de task. */
 export function timeOnce(task: () => number): number {
   const start = performance.now();
   sink += task();
   return performance.now() - start;
 }
 
-/** Roda task antes da medição para o V8 otimizar o código; o tempo é descartado. */
 export function warmUp(task: () => number, repetitions: number): void {
   for (let i = 0; i < repetitions; i++) sink += task();
 }
-
 
 export function writeCsv(path: string, header: string[], rows: (string | number)[][]): void {
   mkdirSync(dirname(path), { recursive: true });

@@ -2,7 +2,6 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { writeCsv } from './measure.ts';
 
-/** Resume results/medicoes.csv por algoritmo e tamanho, para as tabelas do relatório. */
 const RESULTS_DIR = join(import.meta.dirname, '..', '..', 'results');
 
 function median(sorted: number[]): number {

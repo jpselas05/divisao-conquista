@@ -3,10 +3,6 @@ import { createRandom } from './generators.ts';
 import { keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
 import { SUITES } from './suites.ts';
 
-/**
- * Compara os algoritmos em entradas pequenas, onde a força bruta pode vencer.
- * Uma chamada isolada dura pouco para o relógio, então cada medição é um lote.
- */
 const SIZES = [2, 4, 8, 16, 32, 64, 128, 256, 512];
 const RUNS = 5;
 const BATCH_ELEMENTS = 20_000;

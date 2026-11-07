@@ -3,7 +3,6 @@ export interface Point {
   y: number;
 }
 
-/** first e second são índices na entrada original, com first < second. */
 export interface ClosestPairResult {
   distance: number;
   first: number;
