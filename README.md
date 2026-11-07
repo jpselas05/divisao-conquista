@@ -68,12 +68,4 @@ A coleta de lixo não é forçada entre as medições: chamar `gc()` antes de ca
 
 ## Relatório
 
-O PDF fica em `relatorio/relatorio.pdf`. Para gerá-lo de novo a partir de `results/`:
-
-```bash
-python -m venv relatorio/.venv
-relatorio/.venv/Scripts/python -m pip install -r relatorio/requirements.txt
-relatorio/.venv/Scripts/python relatorio/gerar.py
-```
-
-Os nomes da dupla e o link do repositório ficam no início de `relatorio/secoes.py`.
+O relatório está em `relatorio/relatorio.pdf`.
