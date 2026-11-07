@@ -60,6 +60,7 @@ npm run bench:cruzamento  # results/cruzamento.csv
 npm run bench:resumo      # results/resumo.csv
 ```
 
-Cada tamanho tem 20 execuções, com entradas de semente fixa. O código é aquecido antes de medir, e a coleta de lixo é forçada antes de cada medição. As entradas de cada execução são iguais para todos os algoritmos.
+Cada tamanho tem 20 execuções, com entradas de semente fixa. O código é aquecido antes de medir, e as entradas de cada execução são iguais para todos os algoritmos.
 
-O processador usado é híbrido e as medições atuais foram feitas na bateria, com outros programas abertos. Por isso, algumas medições têm dois patamares de tempo: compare a mediana com a média em `resumo.csv`.
+A coleta de lixo não é forçada entre as medições: chamar `gc()` antes de cada uma criava dois patamares de tempo, de cerca de 5 ms e 11 ms, numa chamada que leva cerca de 4 ms sem isso. O custo normal de memória faz parte do tempo medido.
+

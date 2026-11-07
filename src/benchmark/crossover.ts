@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import { createRandom } from './generators.ts';
-import { assertGcEnabled, keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
+import { keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
 import { SUITES } from './suites.ts';
 
 /**
@@ -12,7 +12,6 @@ const RUNS = 5;
 const BATCH_ELEMENTS = 20_000;
 const RESULTS_DIR = join(import.meta.dirname, '..', '..', 'results');
 
-assertGcEnabled();
 const rows: (string | number)[][] = [];
 
 for (const suite of SUITES) {

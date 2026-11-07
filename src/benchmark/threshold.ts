@@ -1,7 +1,7 @@
 import { join } from 'node:path';
 import { closestPairDivideConquer } from '../closestPair/divideConquer.ts';
 import { createRandom, randomPoints } from './generators.ts';
-import { assertGcEnabled, keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
+import { keepSink, timeOnce, warmUp, writeCsv } from './measure.ts';
 import { PLANE_SIZE } from './suites.ts';
 
 /** Mede a divisão e conquista da Etapa 2 com vários limiares de corte da recursão. */
@@ -10,7 +10,6 @@ const SIZES = [6400, 25600];
 const RUNS = 20;
 const RESULTS_DIR = join(import.meta.dirname, '..', '..', 'results');
 
-assertGcEnabled();
 const rows: (string | number)[][] = [];
 
 for (const n of SIZES) {

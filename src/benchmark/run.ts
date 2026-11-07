@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import { createRandom } from './generators.ts';
-import { assertGcEnabled, keepSink, timeOnce, warmUp, writeCsv, writeMachineInfo } from './measure.ts';
+import { keepSink, timeOnce, warmUp, writeCsv, writeMachineInfo } from './measure.ts';
 import { SUITES } from './suites.ts';
 
 /** Inclui os tamanhos sugeridos no enunciado e vai além para evidenciar o crescimento. */
@@ -10,7 +10,6 @@ const WARM_UP_SIZE = 1000;
 const WARM_UP_REPETITIONS = 200;
 const RESULTS_DIR = join(import.meta.dirname, '..', '..', 'results');
 
-assertGcEnabled();
 const rows: (string | number)[][] = [];
 
 for (const suite of SUITES) {

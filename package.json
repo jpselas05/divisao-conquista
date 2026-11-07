@@ -9,9 +9,9 @@
   "scripts": {
     "test": "node ts.ts",
     "typecheck": "tsc",
-    "bench": "node --expose-gc src/benchmark/run.ts",
-    "bench:limiar": "node --expose-gc src/benchmark/threshold.ts",
-    "bench:cruzamento": "node --expose-gc src/benchmark/crossover.ts",
+    "bench": "node src/benchmark/run.ts",
+    "bench:limiar": "node src/benchmark/threshold.ts",
+    "bench:cruzamento": "node src/benchmark/crossover.ts",
     "bench:resumo": "node src/benchmark/summarize.ts"
   },
   "devDependencies": {
