@@ -5,7 +5,7 @@ import { SUITES } from './suites.ts';
 
 /** Inclui os tamanhos sugeridos no enunciado e vai além para evidenciar o crescimento. */
 const SIZES = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600];
-const RUNS = 10;
+const RUNS = 20;
 const WARM_UP_SIZE = 1000;
 const WARM_UP_REPETITIONS = 200;
 const RESULTS_DIR = join(import.meta.dirname, '..', '..', 'results');
