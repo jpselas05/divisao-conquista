@@ -1,16 +1,16 @@
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { closestPairBrute } from './src/closestPair/bruteForce.ts';
-import { closestPairDivideConquer } from './src/closestPair/divideConquer.ts';
-import { createRandom, randomGridPoints, randomIntegers, randomPoints } from './src/benchmark/generators.ts';
-import { maxSubarrayBrute } from './src/maxSubarray/bruteForce.ts';
-import { maxSubarrayDivideConquer } from './src/maxSubarray/divideConquer.ts';
-import { maxSubarrayDivideConquerLinear } from './src/maxSubarray/divideConquerLinear.ts';
-import { maxSubarrayKadane } from './src/maxSubarray/kadane.ts';
+import { closestPairBrute } from '../src/closestPair/bruteForce.ts';
+import { closestPairDivideConquer } from '../src/closestPair/divideConquer.ts';
+import { createRandom, randomGridPoints, randomIntegers, randomPoints } from '../src/benchmark/generators.ts';
+import { maxSubarrayBrute } from '../src/maxSubarray/bruteForce.ts';
+import { maxSubarrayDivideConquer } from '../src/maxSubarray/divideConquer.ts';
+import { maxSubarrayDivideConquerLinear } from '../src/maxSubarray/divideConquerLinear.ts';
+import { maxSubarrayKadane } from '../src/maxSubarray/kadane.ts';
 
 /** Bateria do trabalho: casos em tests/ pelos programas reais, depois força bruta x técnica. */
-const root = import.meta.dirname;
+const root = join(import.meta.dirname, '..');
 const EPSILON = 1e-9;
 let passed = 0;
 const failures: string[] = [];

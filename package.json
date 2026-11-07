@@ -7,7 +7,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "test": "node ts.ts",
+    "test": "node tests/run.ts",
     "typecheck": "tsc",
     "bench": "node src/benchmark/run.ts",
     "bench:limiar": "node src/benchmark/threshold.ts",

@@ -49,7 +49,7 @@ O enunciado não define estes pontos:
 npm test
 ```
 
-O script `ts.ts` passa os casos de `tests/` pelos programas reais e compara a técnica com a força bruta em entradas aleatórias. Cada caso traz entrada, saída esperada e justificativa.
+O script `tests/run.ts` passa os casos de `tests/` pelos programas reais e compara a técnica com a força bruta em entradas aleatórias. Cada caso traz entrada, saída esperada e justificativa.
 
 ## Medições
 
