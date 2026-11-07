@@ -12,6 +12,7 @@
     "bench": "node src/benchmark/run.ts",
     "bench:limiar": "node src/benchmark/threshold.ts",
     "bench:cruzamento": "node src/benchmark/crossover.ts",
+    "bench:ordenacao": "node src/benchmark/sortShare.ts",
     "bench:resumo": "node src/benchmark/summarize.ts"
   },
   "devDependencies": {
